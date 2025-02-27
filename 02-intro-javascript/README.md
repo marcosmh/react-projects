@@ -9,3 +9,7 @@
 ## Giphy
 * https://developers.giphy.com/
 * https://developers.giphy.com/docs/api/endpoint/#random
+
+## Documentacion oficial JavaScript
+* https://developer.mozilla.org/es/
+* https://developer.mozilla.org/es/docs/Web
