@@ -15,17 +15,9 @@ function getSaludo() {
 export const FirstApp = ( { title, subTitle, name }  ) => {
     return (
         <>
-            <h1>{ newMessage }</h1>
-            <h2>Ingeniero</h2>
-            <h3>{  1 +  2 }</h3>
-            <code>{ JSON.stringify( newArray) }</code>
-            <h3>{ getSaludo() }</h3>
-            <p>------------------</p>
-            <h3>{ title }</h3>
-            <h3>{ subTitle }</h3>
-            <h3>{ name }</h3>
-          
-
+            <h1>{ title }</h1>
+            <p>{ subTitle }</p>
+            <p>{ name }</p>
         </>
     );
 }
@@ -36,7 +28,7 @@ FirstApp.propTypes = {
 }
 
 FirstApp.defaultProps = {
-    title : 'No hay titulo',
+    //title : 'No hay titulo',
     subTitle: 'No hay subtitulo',
     name: 'Markcode Developer'
 }
