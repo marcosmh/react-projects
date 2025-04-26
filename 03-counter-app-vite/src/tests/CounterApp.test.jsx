@@ -1,10 +1,10 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { CounterApp } from '../CounterApp';
 
 describe('TEST en <CounterApp/>: ', () => {
 
     const title = 'Counter App';
-    const valor = 100;
+    const valueInitial = 10;
 
     test('TEST:: debe hacer match con el snapshot: ', () => {
 
@@ -20,6 +20,34 @@ describe('TEST en <CounterApp/>: ', () => {
         expect( screen.getByRole('heading',{level: 2}).innerHTML ).toContain('100');
 
     });
+
+    test('TEST:: debe de decrementar con el botón -1: ', () => {
+        render( <CounterApp value={valueInitial}  /> );
+        fireEvent.click( screen.getByText('-1') );
+        expect( screen.getByText('9') ).toBeTruthy();
+
+    });
+
+    test('TEST:: debe de funcionar el boton de reset: ', () => {
+        render( <CounterApp value={ 355 }  /> );
+        fireEvent.click( screen.getByText('+1') );
+        fireEvent.click( screen.getByText('+1') );
+        fireEvent.click( screen.getByText('+1') );
+        
+        //fireEvent.click( screen.getByText('Reset') );
+        //expect( screen.getByText( 355 ) ).toBeTruthy();
+
+
+        fireEvent.click( screen.getByRole('button', { name: 'btn-reset'}) );
+
+        
+
+
+
+    });
+
+
+    
     
     
 
