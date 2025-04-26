@@ -13,7 +13,7 @@ ReactDOM.createRoot( document.getElementById('root') ).render(
     <React.StrictMode>
         {/*<App />*/}
         <FirstApp title="Hola, Markcode"/>
-        {/*<CounterApp value = { 0 }/>*/}
+        <CounterApp value = { 0 }/>
     </React.StrictMode>
 );
 
