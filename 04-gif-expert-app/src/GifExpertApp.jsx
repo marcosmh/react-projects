@@ -7,9 +7,12 @@ const GifExpertApp = () => {
 
    console.log( categories );
 
-   const onAddCategory = () => {
-        setCategories([ ...categories, 'Valorant' ] );
+   const onAddCategory = ( newCategory ) => {
+        //console.log( newCategory );
         //setCategories( cat => [ ...cat, 'Batman' ] );
+
+        setCategories([newCategory, ...categories ] );
+        
    }
 
   return (
@@ -18,8 +21,11 @@ const GifExpertApp = () => {
       <h1>GifExpertApp</h1>
 
         {/* input */}
-        <AddCategory setCategories={ setCategories } />
-
+        <AddCategory 
+          //setCategories={ setCategories } 
+          onNewCategory = { (event) => onAddCategory( event ) } 
+        
+        />
         {/* Listado Gif */}
         <ol>
             { 
