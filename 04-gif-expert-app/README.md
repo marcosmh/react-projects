@@ -23,3 +23,6 @@
 ### GIPHY Developer 
 
 * https://developers.giphy.com/dashboard/
+
+### Compilar
+* yarn build

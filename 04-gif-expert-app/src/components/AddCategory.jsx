@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export const AddCategory = ( { onNewCategory }) => {
 
-  const [ inputValue, setInputValue ] = useState('Buscar gif');
+  const [ inputValue, setInputValue ] = useState('');
 
   const onInputOnChange = ( { target } ) => {
     setInputValue( target.value );
