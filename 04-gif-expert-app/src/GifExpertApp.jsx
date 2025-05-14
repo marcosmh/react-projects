@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { AddCategory } from "./components/AddCategory";
-import { GifGrid } from "./components/GifGrid";
+import { AddCategory, GifGrid } from "./components";
 
 const GifExpertApp = () => {
 
@@ -9,9 +8,7 @@ const GifExpertApp = () => {
    console.log( categories );
 
    const onAddCategory = ( newCategory ) => {
-        //console.log( newCategory );
-        //setCategories( cat => [ ...cat, 'Batman' ] );
-
+        
         if( categories.includes( newCategory ) ) return;
 
         setCategories([newCategory, ...categories ] );
@@ -23,9 +20,7 @@ const GifExpertApp = () => {
       <h1>GifExpertApp</h1>
 
       <AddCategory 
-        //setCategories={ setCategories } 
         onNewCategory = { (event) => onAddCategory( event ) } 
-      
       />
 
       { 
