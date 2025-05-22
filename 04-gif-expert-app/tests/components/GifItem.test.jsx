@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { GifItem } from '../../src/components/GifItem';
 
 
@@ -14,5 +14,29 @@ describe('TEST <GifItem />', () => {
        expect( container ).toMatchSnapshot();
       
     });
+
+    test('TEST: debe mostrar la imágen con el url y alt indicado. ', () => {
+        const { container } = render( <GifItem title={ title } url={ url } /> );
+        //screen.debug();
+        //console.log( screen.getByRole('img').src );
+        //console.log( screen.getByRole('img').alt );
+
+        //expect( screen.getByRole('img').src ).toBe( url );
+        //expect( screen.getByRole('img').alt ).toBe( title );
+
+        const { src, alt } = screen.getByRole('img');
+        expect( src ).toBe( url );
+        expect( title ).toBe( alt );
+
+    });
+
+    test('TEST: debe mostrar el titulo en el componente ', () => {
+
+        render( <GifItem title={ title } url={ url } /> );
+        expect( screen.getByText( title ) ).toBeTruthy();
+      
+    });
+    
+    
     
 })
